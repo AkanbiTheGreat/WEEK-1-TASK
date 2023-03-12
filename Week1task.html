@@ -1,0 +1,101 @@
+<!DOCTYPE HTML> 
+<html> 
+    <head> 
+        <title>Babatunde's Week1 Task</title> 
+        <style> 
+            input{ 
+                border: 1; 
+                border-radius: 30px; 
+            } 
+            fieldset{ 
+                width: 100%; 
+                padding: auto; 
+                background: #fff; 
+                border: 0; 
+                border-radius: 30px; 
+            } 
+            body{ 
+                font-family: Tahoma; 
+                text-align: center; 
+            } 
+            .button, button{ 
+                background: lightgreen; 
+                border: 0; 
+                color: white; 
+                padding: 10px ; 
+                width: 50%; 
+                margin: buttom 10px; 
+                border-radius: 30px; 
+            } 
+            .container{ 
+                width: 100%; 
+                height: 100vh; 
+                background: #3c5077; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+            } 
+            .popup{ 
+                width: 400px; 
+                background: #fff; 
+                border-radius: 6px; 
+                position: absolute; 
+                top: 0%; 
+                left: 50%; 
+                transform: translate(-50%, -50%) scale(0,1); 
+                text-align: center; 
+                padding: 0 30px 30px; 
+                color: #333; 
+                visibility: hidden; 
+                transition: transform 0.4s, top 0.4s; 
+            } 
+            .open-popup{ 
+                visibility: visible; 
+                top: 50%; 
+                transform: translate(-50%, -50%) scale(1); 
+            } 
+ 
+        </style> 
+    </head> 
+    <body> 
+        <div class="container"> 
+            <div class="popup" id="popup"> 
+                <h2>SUCCESS!</h2> 
+                <p>Your details has been successfully submitted</p> 
+                <button type="button" onclick="closePopup()">OK</button> 
+            </div> 
+        <section> 
+            <form method="*"> 
+                <fieldset> 
+                    <h2>BIODATA</h2> 
+                    <label for="fullname">Fullname</label><br> 
+                    <input type="text" name="fullname" id="fullname"><br><br> 
+                    <label for="email">Email</label><br> 
+                    <input type="email" name="email" id="email"><br> 
+                    <span id="email-error">Please input correct email</span> 
+                    <br><br> 
+                    <label for="phone number">Phone Number</label><br> 
+                    <input type="text" name="phone number" id="phone number"><br><br> 
+                    <label for="Male">Male</label> 
+                    <input type="radio" name="sex" id="male"> 
+                    <label for="Female">Female</label> 
+                    <input type="radio" name="sex" id="female"><br><br> 
+                    <label for="password">Password</label><br> 
+                    <input type="password" name="password" id="password"><br><br> 
+                    <input class="button" type="button" value="Submit" onclick="openPopup()" > 
+                </fieldset> 
+            </form> 
+        </div> 
+            <script> 
+                let popup = document.getElementById("popup"); 
+ 
+                function openPopup(){ 
+                    popup.classList.add("open-popup"); 
+                } 
+                function closePopup(){ 
+                    popup.classList.remove("open-popup"); 
+                } 
+            </script> 
+       </section> 
+    </body> 
+</html>
